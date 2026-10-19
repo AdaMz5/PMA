@@ -7,7 +7,7 @@ export default function App() {
     <View style={styles.container}>
       <Text style={styles.title}>Projekt PMA</Text>
       <Text style={styles.subtitle}>
-        Open up App.js to start working on your app!
+        Open up App.js to start working on your app! :)))
       </Text>
 
       <StatusBar style="auto" />
