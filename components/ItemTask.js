@@ -7,7 +7,7 @@ export default function ItemTask({ task, changeStyle }) {
       style={task.done ? styles.itemContainerTrue : styles.itemContainer}
     >
       <Text style={styles.taskText}>
-        {task.title} {task.done ? "" : ""}
+        {task.title} {task.done}
       </Text>
     </Pressable>
   );
