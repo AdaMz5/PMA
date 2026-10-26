@@ -6,12 +6,12 @@ import {
   View,
   Text,
   Button,
-  ScrollView,
   FlatList,
 } from "react-native";
+import ItemTask from "./components/itemTask";
 
 export default function App() {
-  const [task, setTask] = useState("");
+  const [task, setTask] = useState("use state");
   const [taskList, setTaskList] = useState([]);
 
   function handleInputText(text) {
@@ -19,7 +19,7 @@ export default function App() {
   }
 
   function handleAddButton() {
-    setTaskList([...taskList, task]);
+    setTaskList([...taskList, { title: task, done: false }]);
   }
 
   return (
@@ -34,7 +34,7 @@ export default function App() {
       </View>
       <FlatList
         data={taskList}
-        renderItem={({ item }) => <Text> {item} </Text>}
+        renderItem={({ item }) => <ItemTask task={item} />}
         keyExtractor={(item) => item.id}
       />
     </View>
@@ -66,5 +66,3 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
 });
-
-// po prazdninach test view ...
